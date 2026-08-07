@@ -210,3 +210,24 @@ export async function obtenerReporte(){
     return await respuesta.json();
 
 }
+export async function eliminarProducto(id){
+
+    const respuesta = await fetch(
+
+        `${API}/productos/eliminar.php`,
+
+        {
+            method:"DELETE",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                id:id
+            })
+        }
+
+    );
+
+    return await respuesta.json();
+
+}
